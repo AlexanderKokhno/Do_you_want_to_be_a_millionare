@@ -19,4 +19,10 @@ public class QuestionFetcher {
       return null; // Simplified error handling|
     }
   }
+
+  // public static void main(String[] args) {
+  // String ff;
+  // ff = fetchTriviaQuestions();
+  // System.out.println(ff);
+  // }
 }

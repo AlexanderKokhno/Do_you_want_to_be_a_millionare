@@ -1,7 +1,8 @@
 {
   "java.project.referencedLibraries": {
     "include": [
-      "lib/**/*.jar"
+      "lib/**/*.jar",
+      "App/do_you_want_to_be_a_millionare/lib/org.json-1.6-20240205.jar"
     ],
     "exclude": [
       "c:\\Users\\evgen\\Downloads\\org.json-1.6-20240205.jar"

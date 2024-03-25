@@ -11,8 +11,11 @@ public class TriviaQuestionParser {
     String question = firstResult.getString("question");
     String correctAnswer = firstResult.getString("correct_answer");
     JSONArray incorrectAnswers = firstResult.getJSONArray("incorrect_answers");
+
     System.out.println("Question: " + question);
     System.out.println("Correct Answer: " + correctAnswer);
     System.out.println("Incorrect Answers: " + incorrectAnswers.join(", "));
+    System.out.println(incorrectAnswers);
+
   }
 }

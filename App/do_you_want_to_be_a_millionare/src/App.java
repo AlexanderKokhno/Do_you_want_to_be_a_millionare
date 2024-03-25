@@ -8,6 +8,8 @@ public class App {
 
         // System.out.println(Player.score);
 
+        GameServer.startServer();
+
         TriviaQuestionParser.parseAndDisplayQuestion(QuestionFetcher.fetchTriviaQuestions(amount, type, difficulty));
 
     }

@@ -12,7 +12,6 @@ public class App {
         GameServer.startServer();
 
         TriviaQuestionParser.parseAndDisplayQuestion(QuestionFetcher.fetchTriviaQuestions(amount, type, difficulty));
-        System.out.println(TriviaQuestionParser.question);
 
     }
 }

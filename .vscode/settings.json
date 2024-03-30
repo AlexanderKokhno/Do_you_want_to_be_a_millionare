@@ -7,5 +7,6 @@
     "exclude": [
       "c:\\Users\\evgen\\Downloads\\org.json-1.6-20240205.jar"
     ]
-  }
+  },
+  "java.configuration.updateBuildConfiguration": "interactive"
 }

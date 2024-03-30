@@ -12,11 +12,26 @@ public class GameServer {
 
   private static final String HTML_FILE_PATH = "App/do_you_want_to_be_a_millionare/src/index.html";
 
-  public static void main(String[] args) throws Exception {
+  public static void startServer() throws Exception {
+
     HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
     server.createContext("/", new FileHandler());
     server.setExecutor(null);
     server.start();
+    System.out.println("Attempting Server Launch.... please stand by");
+    System.out.println("Press Enter to stop the server");
+    System.in.read(); // Wait for user to press Enter
+
+    closeServer(server);
+
+  }
+
+  public static void closeServer(HttpServer server) {
+    if (server != null) {
+      server.stop(0);
+      System.out.println("Server Killed");
+    }
+
   }
 
   static class FileHandler implements HttpHandler {

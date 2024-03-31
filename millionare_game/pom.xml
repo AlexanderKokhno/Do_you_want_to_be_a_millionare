@@ -21,6 +21,13 @@
 
   <dependencies>
 
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
+    </dependency>
+
+
 <!-- https://mvnrepository.com/artifact/org.json/json -->
     <dependency>
         <groupId>org.json</groupId>
@@ -43,6 +50,7 @@
     <finalName>millionare_game</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
+
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
           <version>3.1.0</version>
@@ -55,6 +63,9 @@
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
+            <configuration>
+                <source>1.8</source>  <target>1.8</target>
+            </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>

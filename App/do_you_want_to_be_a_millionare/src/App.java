@@ -9,7 +9,7 @@ public class App {
         String type = "multiple";
         String difficulty = "medium";
 
-        GameServer.startServer();
+        // GameServer.startServer();
 
         TriviaQuestionParser.parseAndDisplayQuestion(QuestionFetcher.fetchTriviaQuestions(amount, type, difficulty));
         System.out.println(TriviaQuestionParser.question);

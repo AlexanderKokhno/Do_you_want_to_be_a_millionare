@@ -1,6 +1,8 @@
 
 import org.json.JSONObject;
 import org.json.JSONArray;
+import java.util.Arrays;
+import java.util.Random;
 
 public class TriviaQuestionParser {
 
@@ -17,5 +19,26 @@ public class TriviaQuestionParser {
     System.out.println("Incorrect Answers: " + incorrectAnswers.join(", "));
     System.out.println(incorrectAnswers);
 
+    convertJSONArrayToStringArray(incorrectAnswers);
+    testfun(incorrectAnswers);
+
   }
+
+  public static String[] convertJSONArrayToStringArray(JSONArray jsonArray) {
+    String[] stringArray = new String[jsonArray.length()];
+    for (int i = 0; i < jsonArray.length(); i++) {
+      stringArray[i] = jsonArray.getString(i);
+    }
+
+    return stringArray;
+
+  }
+
+  static void testfun(JSONArray jsonArray) {
+    String[] stringArray = convertJSONArrayToStringArray(jsonArray);
+    System.out.println("---------------");
+    System.out.println(Arrays.toString(stringArray));
+    System.out.println(stringArray[1]);
+  }
+
 }

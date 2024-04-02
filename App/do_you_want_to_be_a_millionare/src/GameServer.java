@@ -11,6 +11,8 @@ import java.net.InetSocketAddress;
 public class GameServer {
 
   private static final String HTML_FILE_PATH = "App/do_you_want_to_be_a_millionare/src/index.html";
+  /// got the server to load the html file, but IDK how to send java varibles to
+  /// the HTML
 
   public static void startServer() throws Exception {
 

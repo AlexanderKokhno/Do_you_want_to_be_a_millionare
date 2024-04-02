@@ -7,16 +7,25 @@ import java.io.IOException;
 public class QuestionFetcher {
   String token = "TESTTOKENradomChancePreventer3hdYF8996SP";
 
-  public static String fetchTriviaQuestions(int amount, String type, String difficulty) {
+  public static String fetchTriviaQuestions(String difficulty, String type) {
     QuestionFetcher Qfetcher = new QuestionFetcher();
+    int amount = 1;
 
     HttpClient client = HttpClient.newHttpClient();
-    String url = "https://opentdb.com/api.php?" +
-        "amount=" + amount
-        + "&difficulty=" + difficulty
-        + "&type=" + type
+    String url = "https://opentdb.com/api.php?"
+        + "amount=" + amount
     // + "&token=" + Qfetcher.token // not functional rn
     ;
+    if (difficulty == "any") {
+
+    } else {
+      url = url + "&difficulty=" + difficulty;
+    }
+    if (type == "any") {
+
+    } else {
+      url = url + "&type=" + type;
+    }
     HttpRequest request = HttpRequest.newBuilder()
         .uri(URI.create(url))
         .build();

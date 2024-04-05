@@ -7,7 +7,29 @@ import java.io.IOException;
 public class QuestionFetcher {
   String token = "TESTTOKENradomChancePreventer3hdYF8996SP";
 
-  public static String fetchTriviaQuestions(String difficulty, String type) {
+  public static String fetchTriviaQuestions(String IncomingDifficulty, String type) {
+    String difficulty;
+    if (App.playingGame == true) {
+      if ((App.playerScore < 6) || (App.playerScore == 0)) {
+        difficulty = "easy";
+      }
+      if (App.playerScore < 11) {
+        difficulty = "medium";
+      }
+      if (App.playerScore > 10) {
+        difficulty = "hard";
+      } else {
+        difficulty = "any";
+        System.out.println("ERROR IN QUESTION FETCHER!");
+      }
+    } else if (App.playingGame == false) {
+      difficulty = IncomingDifficulty;
+    } else {
+      difficulty = "any";
+      System.out.println(App.playingGame);
+      System.out.println("ERROR IN QUESTION FETCHER! /");
+    }
+
     QuestionFetcher Qfetcher = new QuestionFetcher();
     int amount = 1;
 

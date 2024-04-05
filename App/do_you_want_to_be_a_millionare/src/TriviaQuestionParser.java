@@ -23,7 +23,7 @@ public class TriviaQuestionParser {
     for (int i = 1; i <= in.length; i++) {
       allAnswers[i] = in[i - 1];
     }
-    System.out.println("DELEATE THIS IS FOR DEBUG " + correctAnswer);
+    // System.out.println("DELEATE THIS IS FOR DEBUG " + correctAnswer);
     boolean gotAnsCorrect;
     gotAnsCorrect = Question.questionF(question, allAnswers, correctAnswer, questionDifficulty);
     return gotAnsCorrect;

@@ -35,10 +35,14 @@ public class GameSettings {
       System.out.println("Using default settings!");
       settingsList.add("any");
       settingsList.add("any");
+      Boolean a = true;
+      App.playingGameB(a);
     } else {
       System.out.println("Select setting; type the name or type the number");
       settingsList.add(selectDifficulty());
       settingsList.add(selectType());
+      Boolean a = false;
+      App.playingGameB(a);
     }
     return settingsList;
 
@@ -46,11 +50,13 @@ public class GameSettings {
 
   static int defaultSettings() {
     int defaultSettings = 0;
-    System.out.println("Use default settings? Y/N");
+    System.out.println("Play game or do single question? G/Q");
     String input = scannerTemplateS();
-    if (input.equalsIgnoreCase("Y") || input.equalsIgnoreCase("yes")) {
+    if (input.equalsIgnoreCase("G") || input.equalsIgnoreCase("play") || input.equalsIgnoreCase("game")
+        || input.equalsIgnoreCase("play game")) {
       defaultSettings = 1;
-    } else if (input.equalsIgnoreCase("N") || input.equalsIgnoreCase("no")) {
+    } else if (input.equalsIgnoreCase("Q") || input.equalsIgnoreCase("question") || input.equalsIgnoreCase("single")
+        || input.equalsIgnoreCase("single question")) {
       defaultSettings = 0;
     } else {
       errorMessage();

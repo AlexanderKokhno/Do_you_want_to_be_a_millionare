@@ -17,11 +17,19 @@ public class Question {
   static boolean questionF(String questionText, String[] a, String correctAnswer, String difficulty) {
     String[] options = a;
     boolean isCorrect;
-    boolean hint = true;
 
     System.out.println("Question difficulty: " + difficulty);
-    if (hint == true) {
-      System.out.println("Type 50/50 to remove half the answers!");
+    if ((App.hasHint_50_50 == true) || (App.hashint_call_friend == true)) {
+      System.out.println("Get help for 4 answer questions!");
+    }
+    if (App.hasHint_50_50 == true) {
+      System.out.println("Type '50/50' to remove half the answers!");
+    }
+    if (App.hashint_call_friend == true) {
+      System.out.println("Type 'call friend' and hope he knows!");
+    }
+    if (App.hashint_ask_audience == true) {
+      System.out.println("Type 'ask audience' and hope they agree!");
     }
 
     for (int i = 0; i < options.length; i++) {
@@ -56,12 +64,20 @@ public class Question {
       isCorrect = false;
     } else if (a.length > 2 && (input.equals(a[2]) || input.equals(a[3]))) {
       isCorrect = false;
-    } else if ((a.length > 2) && (App.hasHint == true) && (input.equalsIgnoreCase("50/50"))) {
+    } else if ((a.length > 2) && (App.hasHint_50_50 == true) && (input.equalsIgnoreCase("50/50"))) {
       Half_and_half_lifeLine.fiftyFifty(a);
-      App.removeHint(false);
+      App.removeHint_50_50(false);
+      return checkAns(a, correctAnswer);
+    } else if ((a.length > 2) && (App.hashint_call_friend == true) && (input.equalsIgnoreCase("call friend"))) {
+      Phone_a_friend_lifeLine.Phone_a_friend(a);
+      App.removeHint_call_friend(false);
+      return checkAns(a, correctAnswer);
+    } else if ((a.length > 2) && (App.hashint_ask_audience == true) && (input.equalsIgnoreCase("ask audience"))) {
+      Ask_audience_lifeLine.ask_crowd(a);
+      App.removeHint_ask_audience(false);
       return checkAns(a, correctAnswer);
     } else {
-      System.out.println("Answer not understood, try again!");
+      System.out.println("Input not understood, try again!");
       return checkAns(a, correctAnswer);
     }
 
